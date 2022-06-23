@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import BadResponseError from './errors/BadResponseError';
 import InvalidResourceError from './errors/InvalidResourceError';
 
@@ -8,7 +9,7 @@ export default class FetchAPI {
 
   async fetch(query) {
     try {
-      const response = await fetch(this.url + query);
+      const response = await fetch(query);
       const { status } = response;
       if (status >= 200 && status <= 299) {
         const responseJSON = await response.json();
@@ -18,17 +19,13 @@ export default class FetchAPI {
     } catch (e) {
       return [
         null,
-        new InvalidResourceError(
-          `Error when attempting to fetch resource ${this.url + query}`,
-        ),
+        new InvalidResourceError(`Error when attempting to fetch resource ${query}`),
       ];
     }
   }
 
   async fetchAll(urls) {
-    const response = await Promise.all(
-      urls.map((url) => this.fetch(url.substring(this.url.length))),
-    );
+    const response = await Promise.all(urls.map((url) => this.fetch(url)));
     return response;
   }
 }
