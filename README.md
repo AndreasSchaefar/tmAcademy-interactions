@@ -23,7 +23,7 @@
 - [x] All errors should be handled with a single error handling class (function)
 - [x] Design and UX are up to you (don’t matter too much)
 - [x] README should contain app description and information on how to start it
-- [-] (optional) host the project on firebase or any other provider
+- [o] (optional) host the project on firebase or any other provider
 
 ### Screenshot
 
