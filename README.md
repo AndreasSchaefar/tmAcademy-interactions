@@ -8,6 +8,7 @@
   - [How to start the project](#how-to-start-the-project)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Resources Used](#resources-used)
 
 ## Overview
 
